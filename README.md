@@ -11,7 +11,7 @@ Include the flipper.css and flipper.js with your project.
 
 Flipper.js will automatically detect when you want to use the wizard if you structure your HTML correctly:
 
-'''html
+```html
 <div id="container-id" class="flip-container">
   <div class="flip-element flip-one flip-up">
     <h1>First Step!</h1>
@@ -29,7 +29,7 @@ Flipper.js will automatically detect when you want to use the wizard if you stru
     <a href="#" data-flip-parent="#container-id">Next</a>
   </div>
 </div>
-'''
+```
 
 Note that the container has its own unique ID and the class 'flip-container'. Each child has 'flip-element' along with its order in plain english (e.g. flip-one, flip-two, etc.). You can specify the direction,too. Currently two are supported: flip-up and flip-left.
 
@@ -40,15 +40,15 @@ I also provide two callbacks if you want to provide advanced functionality. They
 
 Let's say you have a flip element:
  
-'''html
+```html
 <div class="flip-element flip-one flip-up" id="first-flip">
   ...
 </div>
-'''
+```
   
 You could write:
 
-'''javascript
+```javascript
 $("#first-flip").on("should-flip",function(e, shouldFlipCallback){
   //Flip the tile based on a random number.
   var randInt = Math.floor( Math.random()*10 );
@@ -63,7 +63,7 @@ $("#first-flip").on("should-flip",function(e, shouldFlipCallback){
 $("#first-flip").on("was-flipped",function(){
   alert("I was flipped!");
 });
-'''
+```
   
 This can be very powerful if you need the user to complete particular steps before moving onto the next.
 
