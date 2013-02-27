@@ -1,0 +1,196 @@
+.flip-container {
+  position: relative;
+}
+.flip-container > .flip-element {
+  width: 100%;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-origin: 50% 100% 50% 50%;
+  -moz-transform-origin: 50% 100% 50% 50%;
+  -ms-transform-origin: 50% 100% 50% 50%;
+  -o-transform-origin: 50% 100% 50% 50%;
+  transform-origin: 50% 100% 50% 50%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  position: absolute;
+}
+
+/* Default hidden for flip up */
+.flip-container > .flip-element.flip-up.flip-one, .flip-container > .flip-element.flip-up.flip-two, .flip-container > .flip-element.flip-up.flip-three, .flip-container > .flip-element.flip-up.flip-four, .flip-container > .flip-element.flip-up.flip-five {
+  -webkit-transform: perspective(1000px) rotateX(-180deg);
+  -moz-transform: perspective(1000px) rotateX(-180deg);
+  -ms-transform: perspective(1000px) rotateX(-180deg);
+  -o-transform: perspective(1000px) rotateX(-180deg);
+  transform: perspective(1000px) rotateX(-180deg);
+}
+
+/* Default hidden for flip left */
+.flip-container > .flip-element.flip-left.flip-one, .flip-container > .flip-element.flip-left.flip-two, .flip-container > .flip-element.flip-left.flip-three, .flip-container > .flip-element.flip-left.flip-four, .flip-container > .flip-element.flip-left.flip-five {
+  -webkit-transform: perspective(1000px) rotateY(180deg);
+  -moz-transform: perspective(1000px) rotateY(180deg);
+  -ms-transform: perspective(1000px) rotateY(180deg);
+  -o-transform: perspective(1000px) rotateY(180deg);
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+/* Default flip one both up and left */
+.flip-container > .flip-element.flip-one.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  -moz-transform: perspective(1000px) rotateX(0deg);
+  -ms-transform: perspective(1000px) rotateX(0deg);
+  -o-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+}
+.flip-container > .flip-element.flip-one.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+  -moz-transform: perspective(1000px) rotateY(0deg);
+  -ms-transform: perspective(1000px) rotateY(0deg);
+  -o-transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Flip to container two: Hide one. */
+.flip-container.flip-to-two > .flip-element.flip-one.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(180deg);
+  -moz-transform: perspective(1000px) rotateX(180deg);
+  -ms-transform: perspective(1000px) rotateX(180deg);
+  -o-transform: perspective(1000px) rotateX(180deg);
+  transform: perspective(1000px) rotateX(180deg);
+}
+.flip-container.flip-to-two > .flip-element.flip-one.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+  -moz-transform: perspective(1000px) rotateY(-180deg);
+  -ms-transform: perspective(1000px) rotateY(-180deg);
+  -o-transform: perspective(1000px) rotateY(-180deg);
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+/* Flip to container two: Show two. */
+.flip-container.flip-to-two > .flip-element.flip-two.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  -moz-transform: perspective(1000px) rotateX(0deg);
+  -ms-transform: perspective(1000px) rotateX(0deg);
+  -o-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+}
+.flip-container.flip-to-two > .flip-element.flip-two.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+  -moz-transform: perspective(1000px) rotateY(0deg);
+  -ms-transform: perspective(1000px) rotateY(0deg);
+  -o-transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Flip to container three: Hide one and two. */
+.flip-container.flip-to-three > .flip-element.flip-one.flip-up, .flip-container.flip-to-three > .flip-element.flip-two.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(180deg);
+  -moz-transform: perspective(1000px) rotateX(180deg);
+  -ms-transform: perspective(1000px) rotateX(180deg);
+  -o-transform: perspective(1000px) rotateX(180deg);
+  transform: perspective(1000px) rotateX(180deg);
+}
+.flip-container.flip-to-three > .flip-element.flip-one.flip-left, .flip-container.flip-to-three > .flip-element.flip-two.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+  -moz-transform: perspective(1000px) rotateY(-180deg);
+  -ms-transform: perspective(1000px) rotateY(-180deg);
+  -o-transform: perspective(1000px) rotateY(-180deg);
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+/* Flip to container three: Show three. */
+.flip-container.flip-to-three > .flip-element.flip-three.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  -moz-transform: perspective(1000px) rotateX(0deg);
+  -ms-transform: perspective(1000px) rotateX(0deg);
+  -o-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+}
+.flip-container.flip-to-three > .flip-element.flip-three.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+  -moz-transform: perspective(1000px) rotateY(0deg);
+  -ms-transform: perspective(1000px) rotateY(0deg);
+  -o-transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Flip to container four: Hide one, two, and three. */
+.flip-container.flip-to-four > .flip-element.flip-one.flip-up, .flip-container.flip-to-four > .flip-element.flip-two.flip-up, .flip-container.flip-to-four > .flip-element.flip-three.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(180deg);
+  -moz-transform: perspective(1000px) rotateX(180deg);
+  -ms-transform: perspective(1000px) rotateX(180deg);
+  -o-transform: perspective(1000px) rotateX(180deg);
+  transform: perspective(1000px) rotateX(180deg);
+}
+.flip-container.flip-to-four > .flip-element.flip-one.flip-left, .flip-container.flip-to-four > .flip-element.flip-two.flip-left, .flip-container.flip-to-four > .flip-element.flip-three.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+  -moz-transform: perspective(1000px) rotateY(-180deg);
+  -ms-transform: perspective(1000px) rotateY(-180deg);
+  -o-transform: perspective(1000px) rotateY(-180deg);
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+/* Flip to container four: Show four */
+.flip-container.flip-to-four > .flip-element.flip-four.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  -moz-transform: perspective(1000px) rotateX(0deg);
+  -ms-transform: perspective(1000px) rotateX(0deg);
+  -o-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+}
+.flip-container.flip-to-four > .flip-element.flip-four.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+  -moz-transform: perspective(1000px) rotateY(0deg);
+  -ms-transform: perspective(1000px) rotateY(0deg);
+  -o-transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Flip to container five: Hide one, two, three, and four. */
+.flip-container.flip-to-five > .flip-element.flip-one.flip-up, .flip-container.flip-to-five > .flip-element.flip-two.flip-up, .flip-container.flip-to-five > .flip-element.flip-three.flip-up, .flip-container.flip-to-five > .flip-element.flip-four.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(180deg);
+  -moz-transform: perspective(1000px) rotateX(180deg);
+  -ms-transform: perspective(1000px) rotateX(180deg);
+  -o-transform: perspective(1000px) rotateX(180deg);
+  transform: perspective(1000px) rotateX(180deg);
+}
+.flip-container.flip-to-five > .flip-element.flip-one.flip-left, .flip-container.flip-to-five > .flip-element.flip-two.flip-left, .flip-container.flip-to-five > .flip-element.flip-three.flip-left, .flip-container.flip-to-five > .flip-element.flip-four.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+  -moz-transform: perspective(1000px) rotateY(-180deg);
+  -ms-transform: perspective(1000px) rotateY(-180deg);
+  -o-transform: perspective(1000px) rotateY(-180deg);
+  transform: perspective(1000px) rotateY(-180deg);
+}
+
+/* Flip to container five: Show five */
+.flip-container.flip-to-five > .flip-element.flip-five.flip-up {
+  -webkit-transform: perspective(1000px) rotateX(0deg);
+  -moz-transform: perspective(1000px) rotateX(0deg);
+  -ms-transform: perspective(1000px) rotateX(0deg);
+  -o-transform: perspective(1000px) rotateX(0deg);
+  transform: perspective(1000px) rotateX(0deg);
+}
+.flip-container.flip-to-five > .flip-element.flip-five.flip-left {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+  -moz-transform: perspective(1000px) rotateY(0deg);
+  -ms-transform: perspective(1000px) rotateY(0deg);
+  -o-transform: perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
+}
