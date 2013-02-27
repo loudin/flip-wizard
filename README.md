@@ -68,11 +68,11 @@ $("#first-flip").on("was-flipped",function(){
 This can be very powerful if you need the user to complete particular steps before moving onto the next.
 
 #Limitations
-The CSS is hard-coded for just five transitions. I would like to explore ways to make this scalable.
-'flip-element's must be direct children of the flip-container.
+* The CSS is hard-coded for just five transitions. I would like to explore ways to make this scalable.
+* 'flip-element's must be direct children of the flip-container.
 
 #Improvements
-Clean up CSS
-Clean up Javascript
-Minify Javascript
-Provide a way to call the script manually
+* Clean up CSS
+* Clean up Javascript
+* Minify Javascript
+* Provide a way to call the script manually
