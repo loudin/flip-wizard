@@ -7,20 +7,7 @@
 		//If you click on an attribute with data-flip-parent, we need to perform some code here.
     var flipParentId = $(this).attr("data-flip-parent").slice(1);
     var flipParent = $("#"+flipParentId);
-    var currentElem = null;
-    
-    //Find the proper flip-element parent of the button. It's convoluted because of nesting.
-    var allParents = $(this).parents();
-    allParents.each(function(index,elem){
-      if ( $(elem).attr("id") == flipParentId ){
-        for (var i = index; i >= 0; i--){
-          if (allParents.eq(i).hasClass("flip-element")){
-            currentElem = allParents.eq(i);
-            break;
-          }
-        }
-      }
-    });
+    var currentElem = $(this).closest(".flip-element");
     
 		// "one", "two", "three", etc. of what we are switching to. If we are past the end, we toggle back to the beginning.
 		var switchTo = flipVals[currentElem.index()+1];
